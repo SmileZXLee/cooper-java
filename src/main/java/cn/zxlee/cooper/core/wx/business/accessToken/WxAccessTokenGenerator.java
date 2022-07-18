@@ -69,7 +69,7 @@ public class WxAccessTokenGenerator {
         getMap.put("grant_type", "client_credential");
         getMap.put("appid", config.getAppid());
         getMap.put("secret", config.getSecret());
-        String result = HttpReqUtils.doGet("https://api.weixin.qq.com/cgi-bin/token", getMap);
+        String result = HttpReqUtils.doGet(config.getAccessTokenUrl(), getMap);
         Map<String, Object> innerMap = jsonConverter.str2Map(result);
         accessTokenResult.setRawData(innerMap);
         if (innerMap.containsKey("access_token")) {

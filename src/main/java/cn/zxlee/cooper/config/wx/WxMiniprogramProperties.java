@@ -1,6 +1,7 @@
 package cn.zxlee.cooper.config.wx;
 
 import cn.zxlee.cooper.config.wx.base.AbstractWxMpProperties;
+import cn.zxlee.cooper.constants.CooperConstants;
 import cn.zxlee.cooper.exception.CooperRequireInfoException;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -16,6 +17,11 @@ import org.springframework.util.StringUtils;
 @Component
 @ConfigurationProperties(prefix = "cooper.wx.miniprogram")
 public class WxMiniprogramProperties extends AbstractWxMpProperties {
+    /**
+     * 微信小程序登录url(选填)
+     */
+    private String loginUrl;
+
     @Override
     public String getAppid() {
         if (!StringUtils.hasText(appid)) {
@@ -31,4 +37,16 @@ public class WxMiniprogramProperties extends AbstractWxMpProperties {
         }
         return secret;
     }
+
+    public String getLoginUrl() {
+        if (!StringUtils.hasText(loginUrl)) {
+            return CooperConstants.WX_MINIPROGRAM_LOGIN_URL;
+        }
+        return loginUrl;
+    }
+
+    public void setLoginUrl(String loginUrl) {
+        this.loginUrl = loginUrl;
+    }
+
 }

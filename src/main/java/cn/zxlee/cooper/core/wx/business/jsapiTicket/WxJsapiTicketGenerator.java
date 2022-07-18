@@ -64,7 +64,7 @@ public class WxJsapiTicketGenerator {
         if (accessTokenResult.getCode() == 0) {
             getMap.put("type", "jsapi");
             getMap.put("access_token", accessTokenResult.getAccessToken());
-            String result = HttpReqUtils.doGet("https://api.weixin.qq.com/cgi-bin/ticket/getticket", getMap);
+            String result = HttpReqUtils.doGet(config.getGetTicketUrl(), getMap);
             Map<String, Object> innerMap = jsonConverter.str2Map(result);
             ticketResult.setRawData(innerMap);
             if (innerMap.containsKey("ticket")) {

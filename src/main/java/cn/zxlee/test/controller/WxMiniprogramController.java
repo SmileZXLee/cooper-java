@@ -2,7 +2,7 @@ package cn.zxlee.test.controller;
 
 import cn.zxlee.cooper.core.wx.business.decrypt.entity.WxDecryptResult;
 import cn.zxlee.cooper.core.wx.handler.WxMiniprogramHandler;
-import cn.zxlee.cooper.core.wx.business.login.entity.WxMpLoginResult;
+import cn.zxlee.cooper.core.wx.business.login.entity.WxMiniprogramLoginResult;
 import cn.zxlee.test.response.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +26,7 @@ public class WxMiniprogramController {
 
     @GetMapping("/login")
     public Result login(String code){
-        WxMpLoginResult login = miniprogramHandler.login(code);
+        WxMiniprogramLoginResult login = miniprogramHandler.login(code);
         if (login.getCode() == 0){
             // 微信登录成功
             HashMap<String, String> map = new HashMap<>();
@@ -43,7 +43,7 @@ public class WxMiniprogramController {
         String code = (String)map.get("code");
         String encryptedData = (String)map.get("encryptedData");
         String iv = (String)map.get("iv");
-        WxDecryptResult decryptResult = miniprogramHandler.decryptWithCode(code,encryptedData,iv);
+        WxDecryptResult decryptResult = miniprogramHandler.getUserInfoWithCode(code,encryptedData,iv);
         if (decryptResult.getCode() == 0){
             // 用户信息解密成功
             HashMap<String, Object> resultMap = new HashMap<>();
@@ -60,7 +60,7 @@ public class WxMiniprogramController {
         String code = (String)map.get("code");
         String encryptedData = (String)map.get("encryptedData");
         String iv = (String)map.get("iv");
-        WxDecryptResult decryptResult = miniprogramHandler.decryptWithCode(code,encryptedData,iv);
+        WxDecryptResult decryptResult = miniprogramHandler.getPhoneNumberWithCode(code,encryptedData,iv);
         if (decryptResult.getCode() == 0){
             // 用户手机号解密成功
             HashMap<String, Object> resultMap = new HashMap<>();

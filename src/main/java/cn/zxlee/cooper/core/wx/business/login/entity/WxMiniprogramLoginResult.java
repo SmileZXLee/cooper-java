@@ -4,11 +4,11 @@ import cn.zxlee.cooper.base.entity.BaseResult;
 
 /**
  * @program: cooper
- * @description: 微信小程序或公众号登录结果包装类
+ * @description: 微信小程序登录结果包装类
  * @author: zxlee
  * @create: 2022-07-16 18:11
  **/
-public class WxMpLoginResult extends BaseResult {
+public class WxMiniprogramLoginResult extends BaseResult {
     private String openid;
     private String sessionKey;
     private String unionid;

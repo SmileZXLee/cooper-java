@@ -1,6 +1,10 @@
 package cn.zxlee.cooper.config.wx.base;
 
 
+import cn.zxlee.cooper.constants.CooperConstants;
+import cn.zxlee.cooper.exception.CooperRequireInfoException;
+import org.springframework.util.StringUtils;
+
 /**
  * @program: cooper
  * @description: AbstractWxMpProperties
@@ -18,6 +22,11 @@ public abstract class AbstractWxMpProperties {
      */
     protected String secret;
 
+    /**
+     * 微信accessToken生成url
+     */
+    protected String accessTokenUrl;
+
     public String getAppid() {
         return appid;
     }
@@ -32,5 +41,16 @@ public abstract class AbstractWxMpProperties {
 
     public void setSecret(String secret) {
         this.secret = secret;
+    }
+
+    public String getAccessTokenUrl() {
+        if (!StringUtils.hasText(accessTokenUrl)) {
+            return CooperConstants.WX_ACCESSTOKEN_URL;
+        }
+        return accessTokenUrl;
+    }
+
+    public void setAccessTokenUrl(String accessTokenUrl) {
+        this.accessTokenUrl = accessTokenUrl;
     }
 }

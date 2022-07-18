@@ -1,7 +1,7 @@
 package cn.zxlee.cooper.core.wx.business.decrypt;
 
-import cn.zxlee.cooper.core.wx.business.login.WxMpLogin;
-import cn.zxlee.cooper.core.wx.business.login.entity.WxMpLoginResult;
+import cn.zxlee.cooper.core.wx.business.login.WxMiniprogramLogin;
+import cn.zxlee.cooper.core.wx.business.login.entity.WxMiniprogramLoginResult;
 import cn.zxlee.cooper.exception.CooperDecryptFailedException;
 import cn.zxlee.cooper.utils.EncryptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +19,10 @@ import java.util.Map;
 @Component
 public class WxDecrypt {
     @Autowired
-    WxMpLogin mpLogin;
+    WxMiniprogramLogin mpLogin;
 
     public Map<String,Object> decryptWithCode (String code, String encryptedData, String iv){
-        WxMpLoginResult result = mpLogin.login(code);
+        WxMiniprogramLoginResult result = mpLogin.login(code);
         if (result.getCode() == 0) {
             String sessionKey = result.getSessionKey();
             return decryptWithSessionKey(sessionKey, encryptedData, iv);

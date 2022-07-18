@@ -14,7 +14,7 @@ import java.util.Properties;
 
 /**
  * @program: cooper
- * @description:
+ * @description: YamlPropertyLoaderFactory
  * @author: zxlee
  * @create: 2022-07-16 22:06
  **/

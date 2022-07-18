@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * @program: cooper
- * @description:
+ * @description: 抽象的微信小程序或公众号处理者
  * @author: zxlee
  * @create: 2022-07-17 22:29
  **/
@@ -60,7 +60,7 @@ public abstract class AbstractWxMpHandler {
         } catch (CooperDecryptFailedException e) {
             e.printStackTrace();
             result.setCode(WxCommonErrorInfo.DECRYPT_FAILED.getCode());
-            result.setErrMsg(WxCommonErrorInfo.DECRYPT_FAILED.getMsg());
+            result.setErrMsg(e.getMessage());
         }
         return result;
     }

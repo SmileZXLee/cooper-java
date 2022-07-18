@@ -4,7 +4,7 @@ import cn.zxlee.cooper.base.entity.BaseResult;
 
 /**
  * @program: cooper
- * @description:
+ * @description: accessToken结果包装类
  * @author: zxlee
  * @create: 2022-07-16 17:00
  **/

@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * @program: cooper
- * @description:
+ * @description: FastJson实现类
  * @author: zxlee
  * @create: 2022-07-17 21:07
  **/

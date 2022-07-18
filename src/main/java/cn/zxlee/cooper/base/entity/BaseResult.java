@@ -4,13 +4,24 @@ import java.util.Map;
 
 /**
  * @program: cooper
- * @description:
+ * @description: 基础的Result包装类
  * @author: zxlee
  * @create: 2022-07-16 17:03
  **/
 public class BaseResult {
+    /**
+     * 0代表成功，非0代表异常
+     */
     private long code;
+
+    /**
+     * 原始的未经处理的数据
+     */
     private Map rawData;
+
+    /**
+     * 错误信息
+     */
     private String errMsg;
 
     public long getCode() {

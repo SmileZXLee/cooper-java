@@ -17,7 +17,7 @@ import java.util.Map;
 
 /**
  * @program: cooper
- * @description:
+ * @description: jsapi配置生成类
  * @author: zxlee
  * @create: 2022-07-17 20:40
  **/

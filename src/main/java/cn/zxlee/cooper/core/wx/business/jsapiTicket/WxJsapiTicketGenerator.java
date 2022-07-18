@@ -16,7 +16,7 @@ import java.util.Map;
 
 /**
  * @program: cooper
- * @description:
+ * @description: jsapi ticket生成类
  * @author: zxlee
  * @create: 2022-07-17 19:52
  **/

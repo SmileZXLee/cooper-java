@@ -69,6 +69,6 @@ public class Result<T> {
      * @return response result
      */
     public static <T> Result<T> fail(String message) {
-        return fail(ResponseStatus.SERVER_ERROR.getCode(), message);
+        return fail(ResponseStatus.FAIL.getCode(), message);
     }
 }

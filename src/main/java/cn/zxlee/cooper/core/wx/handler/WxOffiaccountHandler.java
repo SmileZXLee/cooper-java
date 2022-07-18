@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @program: cooper
- * @description:
+ * @description: 微信公众号处理者
  * @author: zxlee
  * @create: 2022-07-17 22:22
  **/

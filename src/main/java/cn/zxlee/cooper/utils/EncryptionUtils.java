@@ -20,7 +20,7 @@ import java.util.Set;
 
 /**
  * @program: cooper
- * @description: http请求工具类
+ * @description: 加密工具类
  * @author: zxlee
  * @create: 2022-07-16 19:18
  **/

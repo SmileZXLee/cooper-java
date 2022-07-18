@@ -2,7 +2,7 @@ package cn.zxlee.cooper.core.wx.business.jsapi.config.entity;
 
 /**
  * @program: cooper
- * @description:
+ * @description: jsapi配置结果类
  * @author: zxlee
  * @create: 2022-07-17 22:40
  **/

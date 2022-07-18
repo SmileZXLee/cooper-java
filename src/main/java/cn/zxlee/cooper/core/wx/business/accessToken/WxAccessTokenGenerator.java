@@ -1,6 +1,6 @@
 package cn.zxlee.cooper.core.wx.business.accessToken;
 
-import cn.zxlee.cooper.config.wx.base.WxMpProperties;
+import cn.zxlee.cooper.config.wx.base.AbstractWxMpProperties;
 import cn.zxlee.cooper.config.wx.WxMiniprogramProperties;
 import cn.zxlee.cooper.config.wx.WxOffiaccountProperties;
 import cn.zxlee.cooper.core.wx.business.accessToken.entity.WxAccessTokenResult;
@@ -16,7 +16,7 @@ import java.util.Map;
 
 /**
  * @program: cooper
- * @description:
+ * @description: accessToken生成类
  * @author: zxlee
  * @create: 2022-07-16 16:46
  **/
@@ -60,7 +60,7 @@ public class WxAccessTokenGenerator {
     private WxAccessTokenResult createAccessToken (WxAccessTokenTarget target){
         WxAccessTokenResult accessTokenResult = new WxAccessTokenResult();
         Map<String, String> getMap = new HashMap<>();
-        WxMpProperties config = null;
+        AbstractWxMpProperties config = null;
         if (WxAccessTokenTarget.MINIPROGRAM.equals(target)) {
             config = miniprogramConfig;
         } else if (WxAccessTokenTarget.OFFIACCOUNT.equals(target)) {

@@ -1,6 +1,6 @@
 package cn.zxlee.cooper.config.wx;
 
-import cn.zxlee.cooper.config.wx.base.WxMpProperties;
+import cn.zxlee.cooper.config.wx.base.AbstractWxMpProperties;
 import cn.zxlee.cooper.exception.CooperRequireInfoException;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -8,14 +8,14 @@ import org.springframework.util.StringUtils;
 
 /**
  * @program: cooper
- * @description:
+ * @description: 微信公众号配置
  * @author: zxlee
  * @create: 2022-07-17 23:19
  **/
 
 @Component
 @ConfigurationProperties(prefix = "cooper.wx.offiaccount")
-public class WxOffiaccountProperties extends WxMpProperties {
+public class WxOffiaccountProperties extends AbstractWxMpProperties {
     @Override
     public String getAppid() {
         if (!StringUtils.hasText(appid)) {

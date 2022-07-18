@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * @program: cooper
- * @description:
+ * @description: 微信信息解密结果类
  * @author: zxlee
  * @create: 2022-07-17 18:50
  **/

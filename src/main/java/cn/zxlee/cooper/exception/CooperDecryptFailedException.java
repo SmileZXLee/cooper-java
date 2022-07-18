@@ -2,7 +2,7 @@ package cn.zxlee.cooper.exception;
 
 /**
  * @program: cooper
- * @description:
+ * @description: cooper解密失败异常类
  * @author: zxlee
  * @create: 2022-07-17 17:44
  **/

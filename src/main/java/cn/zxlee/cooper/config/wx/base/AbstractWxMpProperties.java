@@ -1,19 +1,21 @@
 package cn.zxlee.cooper.config.wx.base;
 
-import cn.zxlee.cooper.exception.CooperRequireInfoException;
-import org.springframework.util.StringUtils;
 
 /**
  * @program: cooper
- * @description:
+ * @description: AbstractWxMpProperties
  * @author: zxlee
  * @create: 2022-07-17 23:32
  **/
-public abstract class WxMpProperties {
+public abstract class AbstractWxMpProperties {
     /**
      * appid
      */
     protected String appid;
+
+    /**
+     * secret
+     */
     protected String secret;
 
     public String getAppid() {

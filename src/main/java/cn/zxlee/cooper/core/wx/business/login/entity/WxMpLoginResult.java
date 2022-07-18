@@ -4,7 +4,7 @@ import cn.zxlee.cooper.base.entity.BaseResult;
 
 /**
  * @program: cooper
- * @description:
+ * @description: 微信小程序或公众号登录结果包装类
  * @author: zxlee
  * @create: 2022-07-16 18:11
  **/

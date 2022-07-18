@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * @program: cooper
- * @description:
+ * @description: 微信小程序处理者
  * @author: zxlee
  * @create: 2022-07-17 17:26
  **/

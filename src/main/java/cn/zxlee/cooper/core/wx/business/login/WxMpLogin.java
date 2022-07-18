@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  * @program: cooper
- * @description: 微信小程序登录
+ * @description: 微信小程序或公众号登录
  * @author: zxlee
  * @create: 2022-07-16 17:53
  **/

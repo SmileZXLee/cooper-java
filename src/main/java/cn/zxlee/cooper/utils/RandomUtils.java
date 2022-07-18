@@ -1,12 +1,10 @@
 package cn.zxlee.cooper.utils;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
  * @program: cooper
- * @description:
+ * @description: 随机数生成工具类
  * @author: zxlee
  * @create: 2022-07-17 20:53
  **/

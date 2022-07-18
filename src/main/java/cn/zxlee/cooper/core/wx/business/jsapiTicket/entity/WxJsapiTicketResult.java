@@ -4,7 +4,7 @@ import cn.zxlee.cooper.base.entity.BaseResult;
 
 /**
  * @program: cooper
- * @description:
+ * @description: jsapi ticket结果包装类
  * @author: zxlee
  * @create: 2022-07-17 19:36
  **/

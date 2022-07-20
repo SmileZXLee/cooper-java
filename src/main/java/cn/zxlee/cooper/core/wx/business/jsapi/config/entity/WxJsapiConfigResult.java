@@ -2,8 +2,6 @@ package cn.zxlee.cooper.core.wx.business.jsapi.config.entity;
 
 import cn.zxlee.cooper.base.entity.BaseResult;
 
-import java.util.Map;
-
 /**
  * @program: cooper
  * @description: jsapi配置结果包装类

@@ -47,4 +47,5 @@ public class BaseResult {
     public void setErrMsg(String errMsg) {
         this.errMsg = errMsg;
     }
+
 }

@@ -26,6 +26,16 @@ public class FastJsonConverter implements IJsonConverter {
     }
 
     @Override
+    public String obj2Str(Object obj) {
+        return JSON.toJSONString(obj);
+    }
+
+    @Override
+    public String map2Str(Map<String, Object> map) {
+        return JSON.toJSONString(map);
+    }
+
+    @Override
     public <T> T map2Obj (Map<String, Object> map, Class<T> cls) {
         String jsonStr = JSON.toJSONString(map);
         return JSON.parseObject(jsonStr, cls);

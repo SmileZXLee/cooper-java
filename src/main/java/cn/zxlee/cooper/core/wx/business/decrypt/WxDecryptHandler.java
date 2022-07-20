@@ -1,7 +1,7 @@
 package cn.zxlee.cooper.core.wx.business.decrypt;
 
 import cn.zxlee.cooper.core.wx.business.decrypt.entity.WxDecryptResult;
-import cn.zxlee.cooper.core.wx.enums.WxCommonErrorInfo;
+import cn.zxlee.cooper.core.wx.enums.wx.WxCommonErrorInfo;
 import cn.zxlee.cooper.exception.CooperDecryptFailedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

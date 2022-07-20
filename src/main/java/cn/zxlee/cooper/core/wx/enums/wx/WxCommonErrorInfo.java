@@ -1,4 +1,4 @@
-package cn.zxlee.cooper.core.wx.enums;
+package cn.zxlee.cooper.core.wx.enums.wx;
 
 public enum WxCommonErrorInfo {
     DECRYPT_FAILED(-1, "微信信息解密失败"),

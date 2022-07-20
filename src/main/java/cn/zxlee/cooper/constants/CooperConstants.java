@@ -23,6 +23,11 @@ public final class CooperConstants {
     public static final String WX_MINIPROGRAM_LOGIN_URL = "https://api.weixin.qq.com/sns/jscode2session";
 
     /**
+     * 微信小程序支付url
+     */
+    public static final String WX_MINIPROGRAM_PAY_URL = "https://api.mch.weixin.qq.com/v3/pay/transactions/jsapi";
+
+    /**
      * 微信公众号登录url
      */
     public static final String WX_OFFIACCOUNT_LOGIN_URL = "https://api.weixin.qq.com/sns/oauth2/access_token";

@@ -47,7 +47,7 @@ public class WxOffiaccountGetUserInfo extends AbstractWxMpGetUserInfo {
         Map<String, Object> innerMap = jsonConverter.str2Map(resultStr);
 
         result.setRawData(innerMap);
-        if (innerMap.get("errcode") == null || (int)innerMap.get("errcode") == 0){
+        if (null == innerMap.get("errcode") || 0 == (int)innerMap.get("errcode")){
             // 获取微信公众用户信息成功
             result.setCode(0);
             result.setUserInfo(jsonConverter.map2Obj(innerMap, WxOffiaccountUserInfo.class));
@@ -65,7 +65,7 @@ public class WxOffiaccountGetUserInfo extends AbstractWxMpGetUserInfo {
 
     public WxOffiaccountGetUserInfoResult getUserInfo(String code) {
         WxOffiaccountLoginResult loginResult = offiaccountLogin.login(code);
-        if (loginResult.getCode() == 0) {
+        if (0 == loginResult.getCode()) {
             return getUserInfo(loginResult.getAccessToken(), loginResult.getOpenid());
         } else {
             WxOffiaccountGetUserInfoResult result = new WxOffiaccountGetUserInfoResult();

@@ -1,4 +1,4 @@
-package cn.zxlee.cooper.core.wx.enums;
+package cn.zxlee.cooper.core.wx.enums.wx;
 
 /**
  * @program: cooper

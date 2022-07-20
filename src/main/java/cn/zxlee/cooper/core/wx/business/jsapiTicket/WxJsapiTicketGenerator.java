@@ -4,7 +4,7 @@ import cn.zxlee.cooper.config.wx.WxOffiaccountProperties;
 import cn.zxlee.cooper.core.wx.business.accessToken.WxAccessTokenGenerator;
 import cn.zxlee.cooper.core.wx.business.accessToken.entity.WxAccessTokenResult;
 import cn.zxlee.cooper.core.wx.business.jsapiTicket.entity.WxJsapiTicketResult;
-import cn.zxlee.cooper.core.wx.enums.WxAccessTokenTarget;
+import cn.zxlee.cooper.core.wx.enums.wx.WxAccessTokenTarget;
 import cn.zxlee.cooper.utils.HttpReqUtils;
 import cn.zxlee.cooper.utils.jsonConverter.IJsonConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +35,9 @@ public class WxJsapiTicketGenerator {
     private WxJsapiTicketResult ticket;
 
     public WxJsapiTicketResult getTicket() {
-        if (ticket != null && ticket.getCode() == 0) {
+        if (null != ticket && 0 == ticket.getCode()) {
             synchronized (WxJsapiTicketResult.class) {
-                if (ticket != null && ticket.getCode() == 0) {
+                if (null != ticket && 0 == ticket.getCode()) {
                     long currentTimeMillis = System.currentTimeMillis();
                     long expireIn = ticket.getExpiresIn();
                     long createTime = ticket.getCreateTime();
@@ -61,7 +61,7 @@ public class WxJsapiTicketGenerator {
         WxJsapiTicketResult ticketResult = new WxJsapiTicketResult();
         Map<String, String> getMap = new HashMap<>();
         WxAccessTokenResult accessTokenResult = accessTokenGenerator.getAccessToken(WxAccessTokenTarget.OFFIACCOUNT);
-        if (accessTokenResult.getCode() == 0) {
+        if (0 == accessTokenResult.getCode()) {
             getMap.put("type", "jsapi");
             getMap.put("access_token", accessTokenResult.getAccessToken());
             String result = HttpReqUtils.doGet(config.getGetTicketUrl(), getMap);

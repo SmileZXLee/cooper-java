@@ -40,7 +40,7 @@ public class WxOffiaccountLogin extends AbstractWxMpLogin {
         Map<String, Object> innerMap = jsonConverter.str2Map(resultStr);
 
         result.setRawData(innerMap);
-        if (innerMap.get("errcode") == null || (int)innerMap.get("errcode") == 0){
+        if (null == innerMap.get("errcode") || 0 == (int)innerMap.get("errcode")) {
             // 微信公众号登录成功
             result.setCode(0);
             result.setAccessToken((String)innerMap.get("access_token"));

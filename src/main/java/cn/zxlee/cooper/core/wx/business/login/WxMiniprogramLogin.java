@@ -40,7 +40,7 @@ public class WxMiniprogramLogin extends AbstractWxMpLogin {
 
         WxMiniprogramLoginResult result = new WxMiniprogramLoginResult();
         result.setRawData(innerMap);
-        if (innerMap.get("errcode") == null || (int)innerMap.get("errcode") == 0){
+        if (null == innerMap.get("errcode") || 0 == (int)innerMap.get("errcode")){
             // 微信小程序登录成功
             result.setCode(0);
             result.setOpenid((String)innerMap.get("openid"));

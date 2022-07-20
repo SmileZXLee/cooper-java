@@ -43,7 +43,7 @@ public class HttpReqUtils {
             URI uri = builder.build();
             HttpGet httpGet = new HttpGet(uri);
             response = httpclient.execute(httpGet);
-            if (response.getStatusLine().getStatusCode() == 200) {
+            if (200 == response.getStatusLine().getStatusCode()) {
                 resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
             }
         } catch (Exception e) {

@@ -4,7 +4,7 @@ import cn.zxlee.cooper.config.wx.base.AbstractWxMpProperties;
 import cn.zxlee.cooper.config.wx.WxMiniprogramProperties;
 import cn.zxlee.cooper.config.wx.WxOffiaccountProperties;
 import cn.zxlee.cooper.core.wx.business.accessToken.entity.WxAccessTokenResult;
-import cn.zxlee.cooper.core.wx.enums.WxAccessTokenTarget;
+import cn.zxlee.cooper.core.wx.enums.wx.WxAccessTokenTarget;
 import cn.zxlee.cooper.utils.HttpReqUtils;
 import cn.zxlee.cooper.utils.jsonConverter.IJsonConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +35,9 @@ public class WxAccessTokenGenerator {
     private volatile WxAccessTokenResult accessToken;
 
     public WxAccessTokenResult getAccessToken(WxAccessTokenTarget target) {
-        if (accessToken != null && accessToken.getCode() == 0) {
+        if (null != accessToken && 0 == accessToken.getCode()) {
             synchronized (WxAccessTokenResult.class) {
-                if (accessToken != null && accessToken.getCode() == 0) {
+                if (null != accessToken && 0 == accessToken.getCode()) {
                     long currentTimeMillis = System.currentTimeMillis();
                     long expireIn = accessToken.getExpiresIn();
                     long createTime = accessToken.getCreateTime();

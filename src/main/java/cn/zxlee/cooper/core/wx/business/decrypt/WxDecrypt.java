@@ -23,7 +23,7 @@ public class WxDecrypt {
 
     public Map<String,Object> decryptWithCode (String code, String encryptedData, String iv){
         WxMiniprogramLoginResult result = mpLogin.login(code);
-        if (result.getCode() == 0) {
+        if (0 == result.getCode()) {
             String sessionKey = result.getSessionKey();
             return decryptWithSessionKey(sessionKey, encryptedData, iv);
         } else {

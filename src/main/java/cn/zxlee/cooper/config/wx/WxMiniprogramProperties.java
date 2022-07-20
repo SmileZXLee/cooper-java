@@ -22,6 +22,11 @@ public class WxMiniprogramProperties extends AbstractWxMpProperties {
      */
     private String loginUrl;
 
+    /**
+     * 微信小程序支付url(选填)
+     */
+    private String payUrl;
+
     @Override
     public String getAppid() {
         if (!StringUtils.hasText(appid)) {
@@ -38,6 +43,22 @@ public class WxMiniprogramProperties extends AbstractWxMpProperties {
         return secret;
     }
 
+    @Override
+    public String getMchid() {
+        if (!StringUtils.hasText(mchid)) {
+            throw new CooperRequireInfoException("微信小程序直连商户号(mchid)未配置");
+        }
+        return mchid;
+    }
+
+    @Override
+    public String getPayNotifyUrl() {
+        if (!StringUtils.hasText(payNotifyUrl)) {
+            throw new CooperRequireInfoException("微信小程序异步接收微信支付结果通知的回调地址未配置");
+        }
+        return payNotifyUrl;
+    }
+
     public String getLoginUrl() {
         if (!StringUtils.hasText(loginUrl)) {
             return CooperConstants.WX_MINIPROGRAM_LOGIN_URL;
@@ -49,4 +70,14 @@ public class WxMiniprogramProperties extends AbstractWxMpProperties {
         this.loginUrl = loginUrl;
     }
 
+    public String getPayUrl() {
+        if (!StringUtils.hasText(payUrl)) {
+            return CooperConstants.WX_MINIPROGRAM_PAY_URL;
+        }
+        return payUrl;
+    }
+
+    public void setPayUrl(String payUrl) {
+        this.payUrl = payUrl;
+    }
 }

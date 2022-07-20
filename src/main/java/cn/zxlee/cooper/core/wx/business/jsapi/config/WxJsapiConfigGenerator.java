@@ -36,7 +36,7 @@ public class WxJsapiConfigGenerator {
     public WxJsapiConfigResult getConfig(String url) {
         WxJsapiConfigResult result = new WxJsapiConfigResult();
         WxJsapiTicketResult ticketResult = jsapiTicketGenerator.getTicket();
-        if (ticketResult.getCode() == 0) {
+        if (0 == ticketResult.getCode()) {
             String noncestr = RandomUtils.getRandomStr(16);
             long timestamp = System.currentTimeMillis() / 1000;
             String jsapiTicket = ticketResult.getTicket();
@@ -63,9 +63,4 @@ public class WxJsapiConfigGenerator {
 
     }
 
-
-
-    private String generateNoncestr() {
-        return RandomUtils.getRandomStr(16);
-    }
 }

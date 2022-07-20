@@ -18,6 +18,11 @@ import org.springframework.util.StringUtils;
 @ConfigurationProperties(prefix = "cooper.wx.offiaccount")
 public class WxOffiaccountProperties extends AbstractWxMpProperties {
     /**
+     * 微信公众号登录url(选填)
+     */
+    private String loginUrl;
+
+    /**
      * 微信公众号获取用户信息url(选填)
      */
     private String getUserInfoUrl;
@@ -26,11 +31,6 @@ public class WxOffiaccountProperties extends AbstractWxMpProperties {
      * 微信公众号获取ticket url(选填)
      */
     private String getTicketUrl;
-
-    /**
-     * 微信公众号登录url(选填)
-     */
-    private String loginUrl;
 
     @Override
     public String getAppid() {
@@ -46,6 +46,22 @@ public class WxOffiaccountProperties extends AbstractWxMpProperties {
             throw new CooperRequireInfoException("微信公众号secret未配置");
         }
         return secret;
+    }
+
+    @Override
+    public String getMchid() {
+        if (!StringUtils.hasText(mchid)) {
+            throw new CooperRequireInfoException("微信公众号直连商户号(mchid)未配置");
+        }
+        return mchid;
+    }
+
+    @Override
+    public String getPayNotifyUrl() {
+        if (!StringUtils.hasText(payNotifyUrl)) {
+            throw new CooperRequireInfoException("微信公众号异步接收微信支付结果通知的回调地址未配置");
+        }
+        return payNotifyUrl;
     }
 
     public String getLoginUrl() {

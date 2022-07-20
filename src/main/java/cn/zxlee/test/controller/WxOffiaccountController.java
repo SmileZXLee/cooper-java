@@ -1,7 +1,7 @@
 package cn.zxlee.test.controller;
 
 import cn.zxlee.cooper.core.wx.business.jsapi.config.entity.WxJsapiConfigResult;
-import cn.zxlee.cooper.core.wx.handler.WxOffiaccountHandler;
+import cn.zxlee.cooper.core.wx.service.WxOffiaccountService;
 import cn.zxlee.test.response.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +22,12 @@ import java.util.Map;
 @RequestMapping("/wx/offiaccount")
 public class WxOffiaccountController {
     @Autowired
-    WxOffiaccountHandler offiaccountHandler;
+    WxOffiaccountService offiaccountService;
 
     @GetMapping("/getJsapiConfig")
     public Result getJsapiConfig(String url){
-        WxJsapiConfigResult jsapiConfig = offiaccountHandler.getJsapiConfig(url);
-        if (jsapiConfig.getCode() == 0){
+        WxJsapiConfigResult jsapiConfig = offiaccountService.getJsapiConfig(url);
+        if (0 == jsapiConfig.getCode()) {
             // 获取jsapi配置信息成功
             Map<String, Object> map = new HashMap<>();
             map.put("config", jsapiConfig.getConfig());

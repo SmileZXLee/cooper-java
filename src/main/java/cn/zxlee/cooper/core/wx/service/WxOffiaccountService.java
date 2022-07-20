@@ -1,4 +1,4 @@
-package cn.zxlee.cooper.core.wx.handler;
+package cn.zxlee.cooper.core.wx.service;
 
 import cn.zxlee.cooper.core.wx.business.getUserInfo.WxOffiaccountGetUserInfo;
 import cn.zxlee.cooper.core.wx.business.getUserInfo.entity.WxOffiaccountGetUserInfoResult;
@@ -6,7 +6,7 @@ import cn.zxlee.cooper.core.wx.business.jsapi.config.WxJsapiConfigGenerator;
 import cn.zxlee.cooper.core.wx.business.jsapi.config.entity.WxJsapiConfigResult;
 import cn.zxlee.cooper.core.wx.business.login.WxOffiaccountLogin;
 import cn.zxlee.cooper.core.wx.business.login.entity.WxOffiaccountLoginResult;
-import cn.zxlee.cooper.core.wx.handler.base.AbstractWxMpHandler;
+import cn.zxlee.cooper.core.wx.service.base.AbstractWxMpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  **/
 
 @Component
-public class WxOffiaccountHandler extends AbstractWxMpHandler {
+public class WxOffiaccountService extends AbstractWxMpService {
     @Autowired
     private WxJsapiConfigGenerator jsapiConfigGenerator;
 

@@ -1,7 +1,7 @@
 package cn.zxlee.test.controller;
 
 import cn.zxlee.cooper.core.wx.business.decrypt.entity.WxDecryptResult;
-import cn.zxlee.cooper.core.wx.handler.WxMiniprogramHandler;
+import cn.zxlee.cooper.core.wx.service.WxMiniprogramService;
 import cn.zxlee.cooper.core.wx.business.login.entity.WxMiniprogramLoginResult;
 import cn.zxlee.test.response.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +22,12 @@ import java.util.Map;
 public class WxMiniprogramController {
 
     @Autowired
-    WxMiniprogramHandler miniprogramHandler;
+    WxMiniprogramService miniprogramService;
 
     @GetMapping("/login")
     public Result login(String code){
-        WxMiniprogramLoginResult login = miniprogramHandler.login(code);
-        if (login.getCode() == 0){
+        WxMiniprogramLoginResult login = miniprogramService.login(code);
+        if (0 == login.getCode()) {
             // 微信登录成功
             HashMap<String, String> map = new HashMap<>();
             map.put("open_id", login.getOpenid());
@@ -43,8 +43,8 @@ public class WxMiniprogramController {
         String code = (String)map.get("code");
         String encryptedData = (String)map.get("encryptedData");
         String iv = (String)map.get("iv");
-        WxDecryptResult decryptResult = miniprogramHandler.getUserInfoWithCode(code,encryptedData,iv);
-        if (decryptResult.getCode() == 0){
+        WxDecryptResult decryptResult = miniprogramService.getUserInfoWithCode(code, encryptedData, iv);
+        if (0 == decryptResult.getCode()) {
             // 用户信息解密成功
             HashMap<String, Object> resultMap = new HashMap<>();
             resultMap.put("userInfo", decryptResult.getResult());
@@ -60,8 +60,8 @@ public class WxMiniprogramController {
         String code = (String)map.get("code");
         String encryptedData = (String)map.get("encryptedData");
         String iv = (String)map.get("iv");
-        WxDecryptResult decryptResult = miniprogramHandler.getPhoneNumberWithCode(code,encryptedData,iv);
-        if (decryptResult.getCode() == 0){
+        WxDecryptResult decryptResult = miniprogramService.getPhoneNumberWithCode(code, encryptedData, iv);
+        if (0 == decryptResult.getCode()) {
             // 用户手机号解密成功
             HashMap<String, Object> resultMap = new HashMap<>();
             resultMap.put("phoneInfo", decryptResult.getResult());

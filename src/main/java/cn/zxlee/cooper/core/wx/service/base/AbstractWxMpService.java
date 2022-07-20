@@ -1,11 +1,9 @@
-package cn.zxlee.cooper.core.wx.handler.base;
+package cn.zxlee.cooper.core.wx.service.base;
 
 import cn.zxlee.cooper.base.entity.BaseResult;
 import cn.zxlee.cooper.core.wx.business.decrypt.WxDecryptHandler;
 import cn.zxlee.cooper.core.wx.business.decrypt.entity.WxDecryptResult;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Map;
 
 /**
  * @program: cooper
@@ -13,7 +11,7 @@ import java.util.Map;
  * @author: zxlee
  * @create: 2022-07-17 22:29
  **/
-public abstract class AbstractWxMpHandler {
+public abstract class AbstractWxMpService {
 
     @Autowired
     protected WxDecryptHandler decryptHandler;

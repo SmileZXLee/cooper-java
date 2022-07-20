@@ -1,9 +1,9 @@
-package cn.zxlee.cooper.core.wx.handler;
+package cn.zxlee.cooper.core.wx.service;
 
 import cn.zxlee.cooper.core.wx.business.decrypt.entity.WxDecryptResult;
 import cn.zxlee.cooper.core.wx.business.login.WxMiniprogramLogin;
 import cn.zxlee.cooper.core.wx.business.login.entity.WxMiniprogramLoginResult;
-import cn.zxlee.cooper.core.wx.handler.base.AbstractWxMpHandler;
+import cn.zxlee.cooper.core.wx.service.base.AbstractWxMpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  **/
 
 @Component
-public class WxMiniprogramHandler extends AbstractWxMpHandler {
+public class WxMiniprogramService extends AbstractWxMpService {
 
     @Autowired
     private WxMiniprogramLogin mpLogin;
